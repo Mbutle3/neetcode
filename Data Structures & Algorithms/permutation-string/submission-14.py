@@ -1,0 +1,30 @@
+from collections import Counter
+class Solution:
+    def checkInclusion(self, s1: str, s2: str) -> bool:
+
+        len_1 = len(s1)
+        len_2 = len(s2)
+
+        if len_1 > len_2:
+            return False
+        
+        count_s1 = Counter(s1)
+        count_window = s[: len_1]
+
+        if count_window == count_s1:
+            return True
+
+        for i in range (s1, s2):
+            start_char = s1[i - count_window]
+            new_char = s1[i]
+         
+            count_s1[start_char] += 1
+            count_ss1[new_char] -= 1
+
+            if count_window[start_char] == 0:
+                del count_window[start]
+            
+            if count_window[start_char] == count_s1:
+                return True
+        return False
+
